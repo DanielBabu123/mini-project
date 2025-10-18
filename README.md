@@ -99,3 +99,7 @@ Advanced anomaly detection using hybrid models
 Lakshminarasimha Swamy Vithanala
 📧 lakshminarasimhaswamyvithanala@gmail.com
 🌐 GitHub Profile
+
+# License
+
+This project is intended for academic learning and educational submission. Not intended for commercial use.
