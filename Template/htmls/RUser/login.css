@@ -1,0 +1,112 @@
+/* style.css */
+
+/* --- General Reset & Layout --- */
+.clr { /* Use modern flex/grid for layout instead of this if possible */
+    clear: both;
+} 
+.main {
+    /* Define max-width, center the container, etc. */
+}
+.header {
+    /* Header specific styles */
+}
+.header_resize {
+    /* Inner header layout styles */
+}
+.mainbar {
+    /* Main content column styles */
+}
+.content {
+    padding: 20px 0;
+}
+
+/* --- Title Styles (Refactored from .style5, .style13) --- */
+.site-title a.title-link {
+    font-size: 2.5rem; /* Larger font size */
+    color: #FF0000;   /* Original red color */
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.article-keywords { /* Refactored from .style13 */
+    font-size: 1.5rem;
+    color: #FF0000;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* --- Navigation Bar --- */
+.page-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.page-nav .nav-link {
+    color: inherit; /* White text from alert-primary */
+    text-decoration: none;
+    padding: 0 10px;
+    transition: color 0.3s;
+}
+.page-nav .nav-link:hover {
+    color: #f0f0f0; /* Slightly lighter on hover */
+    text-decoration: underline;
+}
+.nav-separator {
+    margin: 0 5px;
+    color: inherit;
+}
+
+/* --- Login Form --- */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+.login-form {
+    width: 100%;
+    max-width: 400px; /* Constrain form width */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.login-icon {
+    display: block;
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 15px;
+}
+.form-title { /* Refactored from .style5 */
+    font-size: 1.5rem;
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for padding/width */
+}
+
+/* --- Register Button --- */
+.register-prompt {
+    text-align: center;
+    margin-top: 20px;
+}
+.new-user-text { /* Combines .style16 and .style20 styles */
+    color: #FF0000;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.register-prompt a.btn-secondary {
+    /* Customize the appearance of the REGISTER button */
+}

@@ -1,0 +1,103 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<style>
+    body { 
+        background-color: #1a1a1a; /* Dark background for contrast */
+        color: #333; 
+    }
+
+    .container-fluid { padding: 50px; }
+    .container { 
+        background-color: #f5f5f5; /* Soft light background */
+        padding: 30px; 
+        border-radius: 15px; 
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5); 
+    }
+
+    h4#title {
+        font-family: 'Fredoka One', cursive;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .table-container {
+        max-height: 450px;
+        overflow-y: auto;
+        border: 2px solid #4CAF50;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table th {
+        background-color: #4CAF50; /* Green header */
+        color: #ffffff;
+        text-align: center;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    table td {
+        text-align: center;
+        color: #333;
+        font-family: 'Russo One', sans-serif;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2; /* Zebra striping */
+    }
+
+    table tr:hover {
+        background-color: #d1e7dd; /* Hover highlight */
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="container">
+        <h4 id="title">VIEW ALL REMOTE USERS</h4>
+        <div class="table-container">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>USER NAME</th>
+                        <th>EMAIL</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Mob No</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for o in objects %}
+                    <tr>
+                        <td>{{ o.username }}</td>
+                        <td>{{ o.email }}</td>
+                        <td>{{ o.gender }}</td>
+                        <td>{{ o.address }}</td>
+                        <td>{{ o.phoneno }}</td>
+                        <td>{{ o.country }}</td>
+                        <td>{{ o.state }}</td>
+                        <td>{{ o.city }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

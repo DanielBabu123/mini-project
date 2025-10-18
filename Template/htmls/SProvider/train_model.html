@@ -1,0 +1,99 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<style>
+    body {
+        background-color: #121212; /* Dark background */
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+    }
+
+    .container-fluid {
+        padding: 50px;
+    }
+
+    .container {
+        background-color: #f9f9f9; /* Light container */
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    #title {
+        font-family: 'Fredoka One', cursive;
+        color: #1976d2;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+    }
+
+    .table-container {
+        max-height: 450px;
+        overflow-y: auto;
+        border-radius: 12px;
+        border: 2px solid #1976d2;
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Russo One', sans-serif;
+        font-size: 16px;
+    }
+
+    table th, table td {
+        text-align: center;
+        padding: 12px 8px;
+    }
+
+    table th {
+        background: linear-gradient(135deg, #1976d2, #42a5f5);
+        color: #fff;
+        font-weight: 700;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    table td {
+        background-color: #e3f2fd; /* Light blue row */
+        color: #0d47a1;
+        font-weight: 500;
+    }
+
+    table tr:nth-child(even) td {
+        background-color: #bbdefb; /* Alternate row */
+    }
+
+    table tr:hover td {
+        background-color: #90caf9; /* Hover effect */
+        transition: 0.3s;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="container">
+        <p id="title">Datasets Trained and Tested Results</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model Type</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for object in objs %}
+                    <tr>
+                        <td>{{ object.names }}</td>
+                        <td>{{ object.ratio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

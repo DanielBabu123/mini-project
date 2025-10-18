@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Provider | Multi-Participant Fraud Detection</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --primary-red: #ff0000;
+            --secondary-purple: #8e4fd1; /* Original purple color */
+            --dark-bg: rgba(0, 0, 0, 0.85);
+            --dark-transparent-bg: rgba(0, 0, 0, 0.6);
+            --text-color: #e0e0e0;
+            --light-text-color: #ffffff;
+            --header-font: 'Russo One', sans-serif;
+            --body-font: 'Montserrat', sans-serif; /* Changed from Open Sans for a modern feel */
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        /* Base Body Styles */
+        body {
+            margin: 0;
+            font-family: var(--body-font);
+            background: url("{% static 'bg.png' %}") no-repeat center center fixed; /* Dynamic background image */
+            background-size: cover;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; /* Allows footer to stick to bottom if present */
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            flex-grow: 1; /* Ensures the wrapper takes full height */
+        }
+
+        /* Header Styling */
+        .main-header {
+            text-align: center;
+            padding: 2.5rem 1.5rem; /* More vertical padding */
+            background: var(--dark-bg);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+
+        .site-title {
+            font-family: var(--header-font);
+            font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size */
+            color: var(--primary-red);
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better readability on dark background */
+        }
+
+        /* Navigation Styling */
+        .main-nav {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            justify-content: center;
+            background-color: var(--dark-transparent-bg);
+            padding: 0.8rem 0;
+            border-bottom: 2px solid var(--primary-red); /* Accent border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+        }
+
+        .nav-item {
+            display: flex; /* Aligns icon and text */
+            align-items: center;
+            margin: 0.4rem 0.6rem;
+            padding: 0.9rem 1.2rem;
+            text-decoration: none;
+            color: var(--light-text-color);
+            background-color: var(--secondary-purple);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all var(--transition-speed) ease; /* Smooth transitions for hover effects */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Button shadow */
+        }
+
+        .nav-item:hover {
+            background-color: var(--primary-red); /* Hover color change */
+            color: var(--light-text-color);
+            transform: translateY(-3px); /* Subtle lift effect */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+        }
+
+        .nav-item.active { /* Class for the currently active page */
+            background-color: var(--primary-red);
+            color: var(--light-text-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            cursor: default; /* Indicate it's the current page */
+        }
+
+        .nav-icon {
+            margin-right: 8px; /* Space between icon and text */
+            font-size: 1.1em; /* Slightly larger icon */
+        }
+
+        .nav-item.logout {
+            background-color: #cc3333; /* Distinct red for logout button */
+        }
+        .nav-item.logout:hover {
+            background-color: #ff6666;
+        }
+
+        /* Main Content Area */
+        .content-area {
+            flex-grow: 1; /* Allows content to push footer down (if any) */
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            justify-content: center; /* Center the mainholder horizontally */
+            align-items: flex-start; /* Align content to the top of the available space */
+        }
+
+        .mainholder {
+            width: 100%;
+            max-width: 1000px; /* Constrain content width for readability */
+            background: var(--dark-transparent-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow for main content */
+            min-height: 300px; /* Ensure a minimum height for visual balance */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content if there's not much */
+            align-items: center; /* Horizontally center content */
+            text-align: center;
+        }
+
+        .mainholder p { /* Example style for default text within mainholder */
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .nav-item {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+            .site-title {
+                font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column; /* Stack nav items vertically */
+                align-items: stretch; /* Stretch items to fill width */
+                padding: 1rem 0.5rem;
+            }
+            .nav-item {
+                margin: 0.5rem auto;
+                width: calc(100% - 2rem); /* Account for padding */
+                max-width: 350px; /* Prevent items from becoming too wide on tablets */
+                text-align: center;
+                justify-content: center; /* Center icon and text */
+                padding: 1rem;
+            }
+            .nav-icon {
+                margin-right: 10px;
+            }
+            .main-header {
+                padding: 1.5rem 1rem;
+            }
+            .site-title {
+                font-size: clamp(1.6rem, 5vw, 2.2rem);
+            }
+            .mainholder {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-title {
+                font-size: clamp(1.4rem, 6vw, 1.8rem);
+            }
+            .nav-item {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+                width: calc(100% - 1.5rem);
+            }
+            .nav-icon {
+                margin-right: 5px;
+            }
+            .content-area {
+                padding: 1.5rem 1rem;
+            }
+            .mainholder {
+                padding: 1rem;
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <div class="header-content">
+                <h1 class="site-title">A Multi-Perspective Fraud Detection Method for Multi-Participant E-commerce Transactions</h1>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <a href="{% url 'train_model' %}" class="nav-item">
+                <i class="fas fa-database nav-icon"></i> Browse & Train/Test Data Sets
+            </a>
+            <a href="{% url 'likeschart' 'bar' %}" class="nav-item">
+                <i class="fas fa-chart-bar nav-icon"></i> View Accuracy Bar Chart
+            </a>
+            <a href="{% url 'charts1' 'line' %}" class="nav-item">
+                <i class="fas fa-chart-line nav-icon"></i> View Accuracy Line Chart
+            </a>
+            <a href="{% url 'View_Fraud_Detection_Status' %}" class="nav-item">
+                <i class="fas fa-shield-alt nav-icon"></i> View Fraud Status Prediction
+            </a>
+            <a href="{% url 'View_Fraud_Detection_Ratio' %}" class="nav-item">
+                <i class="fas fa-percent nav-icon"></i> Fraud Status Ratio
+            </a>
+            <a href="{% url 'Download_Trained_DataSets' %}" class="nav-item">
+                <i class="fas fa-download nav-icon"></i> Download Trained Data
+            </a>
+            <a href="{% url 'charts' 'line' %}" class="nav-item">
+                <i class="fas fa-chart-area nav-icon"></i> View Fraud Ratio Results
+            </a>
+            <a href="{% url 'View_Remote_Users' %}" class="nav-item">
+                <i class="fas fa-users nav-icon"></i> View Remote Users
+            </a>
+            <a href="{% url 'index' %}" class="nav-item logout">
+                <i class="fas fa-sign-out-alt nav-icon"></i> Logout
+            </a>
+        </nav>
+
+        <main class="content-area">
+            <div class="mainholder">
+                {% block researchblock %}
+                <p>Welcome, Service Provider! Use the navigation above to manage fraud detection and data analysis.</p>
+                {% endblock %}
+            </div>
+        </main>
+        
+        </div>
+</body>
+</html>

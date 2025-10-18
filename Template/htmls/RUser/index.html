@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | Multi-Participant E-commerce Fraud Detection</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'coin-slider.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://unpkg.com/soft-ui-design-system@1.0.1/assets/css/soft-design-system.min.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous" defer></script>
+    <script src="{% static 'jquery-1.4.2.min.js' %}" defer></script>
+    <script src="{% static 'script.js' %}" defer></script>
+    <script src="{% static 'coin-slider.min.js' %}" defer></script>
+    <script src="{% static 'cufon-yui.js' %}" defer></script>
+    <script src="{% static 'cufon-aller.js' %}" defer></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+        }
+
+        .header {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+        }
+
+        .nav-links {
+            margin-top: 0.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .content p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #343a40;
+        }
+
+        footer {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>A Multi-Perspective Fraud Detection Method</h1>
+        <nav class="nav-links">
+            <a href="{% url 'index' %}">Home</a> |
+            <a href="{% url 'login' %}">Remote User</a> |
+            <a href="{% url 'serviceproviderlogin' %}">Service Provider</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <img src="{% static 'Remote.jpg' %}" alt="E-commerce banner">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>Fraud detection|Electronic transaction|Machine learning</h2>
+        <img src="{% static 'img1.jpg' %}" alt="Fraud Detection Illustration">
+        <p>
+            Detection and prevention of fraudulent transactions in e-commerce platforms have always been the focus of transaction security systems.
+            However, due to the concealment of e-commerce, it is not easy to capture attackers solely based on the historic order information.
+            Many researches try to develop technologies to prevent the frauds, which have not considered the dynamic behaviors of users from multiple perspectives.
+            This leads to an inefficient detection of fraudulent behaviors. To this end, this paper proposes a novel fraud detection method that integrates
+            machine-learning and process mining models to monitor real-time user behaviors.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; {{ year }} Multi-Participant E-commerce Fraud Detection. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

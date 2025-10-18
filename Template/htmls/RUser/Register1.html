@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Multi-Participant E-commerce Fraud Detection</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://unpkg.com/soft-ui-design-system@1.0.1/assets/css/soft-design-system.min.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous" defer></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .nav-links {
+            margin-top: 0.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .banner img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .register-container {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .register-container h2 {
+            text-align: center;
+            color: #ff0000;
+            margin-bottom: 1.5rem;
+        }
+
+        .register-container img {
+            display: block;
+            margin: 0 auto 1rem;
+            max-width: 120px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #cc0000;
+        }
+
+        .status {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <h1>A Multi-Perspective Fraud Detection Method</h1>
+    <nav class="nav-links">
+        <a href="{% url 'index' %}">Home</a> |
+        <a href="{% url 'login' %}">Remote User</a> |
+        <a href="{% url 'serviceproviderlogin' %}">Service Provider</a>
+    </nav>
+</header>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="{% static 'Remote.jpg' %}" alt="E-commerce banner">
+</div>
+
+<!-- Registration Form -->
+<div class="register-container">
+    <h2>REGISTER YOUR DETAILS</h2>
+    <img src="{% static 'Register.jpg' %}" alt="Register icon">
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <textarea name="address" placeholder="Address"></textarea>
+        </div>
+
+        <div class="form-group">
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="number" name="phoneno" placeholder="Mobile Number" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="country" placeholder="Country" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="state" placeholder="State" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="city" placeholder="City" required>
+        </div>
+
+        <input type="submit" value="Register" class="btn-submit">
+    </form>
+
+    {% if object %}
+    <div class="status">Registered Status: {{ object }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>

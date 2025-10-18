@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Provider Login | E-commerce Fraud Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Fredoka+One" rel="stylesheet">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <style>
+        body {
+            background: url("{% static 'bg.png' %}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            margin-top: 50px;
+        }
+
+        h2#title {
+            font-family: 'Fredoka One', cursive;
+            color: #FF0000;
+            font-size: 2rem;
+        }
+
+        .sub-title {
+            font-family: 'Righteous', cursive;
+            color: #FF0099;
+        }
+
+        .login-container img {
+            max-width: 150px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .btn-primary {
+            background-color: #8e4fd1;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #6a30a8;
+        }
+
+        .alternative-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .alternative-login a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff4d4d;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .alternative-login a:hover {
+            background-color: #cc0000;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                margin-top: 20px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="text-center">
+        <h2 id="title">A Multi-Perspective Fraud Detection Method for Multi-Participant E-commerce Transactions</h2>
+        <p class="sub-title"><small>Fraud detection | Electronic transaction</small></p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 login-container">
+            <form method="POST" role="form">
+                {% csrf_token %}
+                <img src="{% static 'login.jpg' %}" alt="Login Icon">
+                <h4 class="text-center style2">Service Provider Login</h4>
+                
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="User Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group text-center">
+                    <input type="submit" name="submit1" class="btn btn-primary btn-block" value="Login">
+                </div>
+                
+                <div class="alternative-login">
+                    <a href="{% url 'login' %}">Remote User Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<style>
+    body {background-color:#000;}
+    .container-fluid {padding:50px;}
+    .container {background-color:rgb(108, 100, 100); padding:30px; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.4);}
+    #title {font-family:'Fredoka One', cursive;}
+    .text-uppercase {font-family:'Righteous', cursive;}
+    .table-container {
+        border: 2px solid #090a08;
+        max-height: 450px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+    .table th {
+        background-color:#0c0b0b;
+        color:#b5b9b0;
+        text-align:center;
+        font-weight:bold;
+    }
+    .table td {
+        color:#0e0202;
+        font-size:16px;
+        font-family:fantasy;
+        text-align:center;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase text-center text-danger mb-3">View Found Detection Type Details in Ecommerce Transactions</h4>
+                <hr>
+                <div class="table-container">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>PDate</th>
+                                <th>Status</th>
+                                <th>Fulfilment</th>
+                                <th>Sales Channel</th>
+                                <th>Ship Level</th>
+                                <th>Style</th>
+                                <th>SKU</th>
+                                <th>Category</th>
+                                <th>Size</th>
+                                <th>ASIN</th>
+                                <th>Qty</th>
+                                <th>Currency</th>
+                                <th>Amount</th>
+                                <th>Payment By</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Postal Code</th>
+                                <th>Country</th>
+                                <th>Prediction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for object in list_objects %}
+                            <tr>
+                                <td>{{ object.Order_ID }}</td>
+                                <td>{{ object.PDate }}</td>
+                                <td>{{ object.Status }}</td>
+                                <td>{{ object.Fulfilment }}</td>
+                                <td>{{ object.Sales_Channel }}</td>
+                                <td>{{ object.ship_service_level }}</td>
+                                <td>{{ object.Style }}</td>
+                                <td>{{ object.SKU }}</td>
+                                <td>{{ object.Category }}</td>
+                                <td>{{ object.PSize }}</td>
+                                <td>{{ object.ASIN }}</td>
+                                <td>{{ object.Qty }}</td>
+                                <td>{{ object.currency }}</td>
+                                <td>{{ object.Amount }}</td>
+                                <td>{{ object.payment_by }}</td>
+                                <td>{{ object.ship_city }}</td>
+                                <td>{{ object.ship_state }}</td>
+                                <td>{{ object.ship_postal_code }}</td>
+                                <td>{{ object.ship_country }}</td>
+                                <td>{{ object.Prediction }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
