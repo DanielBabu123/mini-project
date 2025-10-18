@@ -88,16 +88,6 @@ python manage.py runserver
 ✅ Done!
 Your app should now be running locally 🎉
 
-📸 Screenshots Overview
-Screenshot	Description
-🏠 Home Page	Entry screen of the web application
-📝 Registration Page	Allows users to register with details
-🔑 Remote User Login	User login screen for accessing prediction features
-📋 Remote User Details Table	Displays all remote users and their metadata
-📈 Accuracy Line Graph	Line chart showing accuracy of ML models
-📊 Accuracy Bar Chart	Bar chart comparison of ML models by performance
-🥧 Accuracy Pie Chart	Pie chart showing proportional accuracy of algorithms
-
 💡 Future Enhancements
 Integration of Deep Learning models (LSTM/ANN)
 
