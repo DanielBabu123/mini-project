@@ -26,43 +26,39 @@ A **web-based machine learning project** to detect fraudulent transactions in **
 
 ---
 
+
 ## 🧰 Requirements
 
-Install dependencies using either of the two methods below:
+Install dependencies using **one** of the two options below:
 
 ### 👉 Option 1: Using `requirements.txt`
 ```bash
 pip install -r requirements.txt
-👉 Option 2: Manually install each package
-bash
-Copy code
+```
+### 👉 Option 2: Manual Installation
+```bash
 pip install django mysqlclient numpy pandas scikit-learn matplotlib joblib
-🛠️ How to Run the Project
-1️⃣ Clone the repository:
-bash
-Copy code
-git clone-https://github.com/VithanalaLakshminarasimhaSwamy/Multi-Perspective-Fraud-Detection-System
-cd multi-perspective-fraud-detection
-2️⃣ Create and activate a virtual environment:
-bash
-Copy code
+```
+🚀 How to Run the Project
+1️⃣ Clone the Repository
+```bash
+git clone https://github.com/VithanalaLakshminarasimhaSwamy/Multi-Perspective-Fraud-Detection-System.git
+cd Multi-Perspective-Fraud-Detection-System
+```
+2️⃣ Create & Activate a Virtual Environment
+```bash
 python -m venv venv
 venv\Scripts\activate       # On Windows
 # source venv/bin/activate  # On Mac/Linux
-3️⃣ Install dependencies:
-Follow the Requirements section above.
+```
+3️⃣ Install Dependencies
+Follow the steps mentioned in the Requirements section above.
 
-4️⃣ Set up the MySQL database:
-Open  MySQL Workbench
-
-Create a database named multi_db
-
-Update database configuration inside a_multiperspective_fraud_detection/settings.py
-
-Example:
-
-python
-Copy code
+4️⃣ Set Up the MySQL Database
+1.Open MySQL Workbench.
+2.Create a new database named multi_db.
+3.Update your database configuration inside a_multiperspective_fraud_detection/settings.py:
+```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -73,33 +69,55 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-5️⃣ Apply Django migrations:
-bash
-Copy code
+
+```
+5️⃣ Apply Django Migrations
+```bash
 python manage.py makemigrations
 python manage.py migrate
-6️⃣ Run the server:
-bash
-Copy code
+```
+6️⃣ Run the Server
+```bash
 python manage.py runserver
-7️⃣ Open your browser and visit:
+```
+7️⃣ Access the Application
+Open your browser and go to:
 👉 http://127.0.0.1:8000/
+```
+```
+✨ Features
+📊 Multi-perspective behavior analysis
 
-✅ Done!
-Your app should now be running locally 🎉
+✅ Fraudulent transaction prediction
 
+🔐 Role-based login for Remote Users & Service Providers
+
+📈 Model accuracy visualization using interactive graphs
+
+```
+```
 💡 Future Enhancements
-Integration of Deep Learning models (LSTM/ANN)
+```
+```
+🤖 Integration of Deep Learning models (LSTM / ANN)
 
-Live transaction data monitoring
+📡 Live transaction data monitoring
 
-Advanced anomaly detection using hybrid models
-
+🧠 Advanced anomaly detection using hybrid models
+```
+```
 👨‍💻 Author
+```
+```
 Lakshminarasimha Swamy Vithanala
 📧 lakshminarasimhaswamyvithanala@gmail.com
 🌐 GitHub Profile
 
-#License
-
-This project is intended for academic learning and educational submission. Not intended for commercial use.
+```
+```
+📜 License
+```
+```
+This project is intended for academic learning and educational submission only.
+Not intended for commercial use.
+```
