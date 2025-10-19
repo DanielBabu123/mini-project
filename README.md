@@ -1,64 +1,67 @@
-# 🛡️ Multi-Perspective Fraud Detection for E-Commerce Transactions
+# Multi-Perspective Fraud Detection for E-Commerce Transactions
 
-A **web-based machine learning project** to detect fraudulent transactions in **multi-participant e-commerce systems** by analyzing behavior using a combination of **process mining** and **machine learning (SVM, etc.)**.
----
-## 🚀 Features
-
-- 📊 **Analyze user behavior** from multiple perspectives (time, resource, control flow)  
-- ✅ **Predict** whether a transaction is fraudulent  
-- 🔐 **Role-based login** for Remote Users and Service Providers  
-- 📈 **Visualize model accuracy** using graphs (Bar, Pie, Line)  
-- 🧠 **SVM-based classification** integrated with Django backend  
-- 📂 **Upload and process datasets** from the admin interface  
+A web-based machine learning system designed to detect fraudulent activities in multi-participant e-commerce environments using a combination of process mining and machine learning techniques.
 
 ---
 
-## 🏗️ Tech Stack
+## Features
 
-| Layer | Technology |
-|--------|-------------|
+- Analyze user behavior from multiple perspectives — time, resource, and control flow  
+- Predict whether a transaction is fraudulent or legitimate  
+- Role-based login for Remote Users and Service Providers  
+- Visualize model accuracy with bar, pie, and line charts  
+- Integrated SVM-based classification with Django backend  
+- Upload and process datasets from the admin interface  
+
+---
+
+## Tech Stack
+
+| Layer | Technologies |
+|:------|:--------------|
 | **Frontend** | HTML, CSS, JavaScript |
 | **Backend** | Python, Django |
-| **Database** | MySQL (via MySQLWORKBENCH) |
-| **ML Algorithms** | SVM, Decision Tree, Logistic Regression, Naive Bayes, Random Forest |
+| **Database** | MySQL (MySQL Workbench) |
+| **Machine Learning** | SVM, Decision Tree, Logistic Regression, Naive Bayes, Random Forest |
 | **Visualization** | Matplotlib |
-| **Deployment** | Git + GitHub |
+| **Version Control** | Git, GitHub |
 
 ---
 
+## Requirements
 
-## 🧰 Requirements
+Install dependencies using one of the following methods.
 
-Install dependencies using **one** of the two options below:
-
-### 👉 Option 1: Using `requirements.txt`
+### Option 1 — Using `requirements.txt`
 ```bash
 pip install -r requirements.txt
 ```
-### 👉 Option 2: Manual Installation
+### Option2 - Manual Installation
 ```bash
 pip install django mysqlclient numpy pandas scikit-learn matplotlib joblib
 ```
-🚀 How to Run the Project
-1️⃣ Clone the Repository
+## Project Setup
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/VithanalaLakshminarasimhaSwamy/Multi-Perspective-Fraud-Detection-System.git
 cd Multi-Perspective-Fraud-Detection-System
+
 ```
-2️⃣ Create & Activate a Virtual Environment
+### 2. Create and Activate a Virtual Environment
 ```bash
 python -m venv venv
-venv\Scripts\activate       # On Windows
-# source venv/bin/activate  # On Mac/Linux
+venv\Scripts\activate       # Windows
+source venv/bin/activate  # macOS / Linux
 ```
-3️⃣ Install Dependencies
+### 3. Install Dependencies
 Follow the steps mentioned in the Requirements section above.
+### 4. Configure the MySQL Database
+Open MySQL Workbench.
 
-4️⃣ Set Up the MySQL Database
-1.Open MySQL Workbench.
-2.Create a new database named multi_db.
-3.Update your database configuration inside a_multiperspective_fraud_detection/settings.py:
-```
+Create a new database named multi_db.
+
+Update the database settings in a_multiperspective_fraud_detection/settings.py:
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -69,55 +72,32 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 ```
-5️⃣ Apply Django Migrations
+### 5.Apply Migrations
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-6️⃣ Run the Server
+### 6. Run the Development Server
 ```bash
 python manage.py runserver
 ```
-7️⃣ Access the Application
-Open your browser and go to:
-👉 http://127.0.0.1:8000/
-```
-```
-✨ Features
-📊 Multi-perspective behavior analysis
+### 7. Access the Application
+Open your browser and visit:
+http://127.0.0.1:8000/
 
-✅ Fraudulent transaction prediction
+## Future Enhancements
+Integration of deep learning models (LSTM / ANN)
 
-🔐 Role-based login for Remote Users & Service Providers
+Real-time transaction monitoring
 
-📈 Model accuracy visualization using interactive graphs
-
-```
-```
-💡 Future Enhancements
-```
-```
-🤖 Integration of Deep Learning models (LSTM / ANN)
-
-📡 Live transaction data monitoring
-
-🧠 Advanced anomaly detection using hybrid models
-```
-```
-👨‍💻 Author
-```
-```
+Hybrid anomaly detection for improved accuracy
+## Author
 Lakshminarasimha Swamy Vithanala
-📧 lakshminarasimhaswamyvithanala@gmail.com
-🌐 GitHub Profile
+Email: [lakshminarasimhaswamyvithanala@gmail.com](mailto:lakshminarasimhaswamyvithanala@gmail.com)
+GitHub:[](https://github.com/VithanalaLakshminarasimhaSwamy)
 
-```
-```
-📜 License
-```
-```
-This project is intended for academic learning and educational submission only.
-Not intended for commercial use.
-```
+## License
+This project is intended for academic and educational purposes only.
+Not for commercial use.
+
