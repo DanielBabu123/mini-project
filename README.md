@@ -94,7 +94,7 @@ Real-time transaction monitoring
 Hybrid anomaly detection for improved accuracy
 ## Author
 
-Lakshminarasimha Swamy Vithanala  
+Kallu Daniel Babu
 Email: mk744159@gmail.com
 GitHub: [https://github.com/DanielBabu123](https://github.com/DanielBabu123)
 
