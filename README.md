@@ -95,6 +95,7 @@ Hybrid anomaly detection for improved accuracy
 ## Author
 
 Kallu Daniel Babu
+
 Email: mk744159@gmail.com
 GitHub: [https://github.com/DanielBabu123](https://github.com/DanielBabu123)
 
