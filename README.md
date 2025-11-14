@@ -95,8 +95,8 @@ Hybrid anomaly detection for improved accuracy
 ## Author
 
 Lakshminarasimha Swamy Vithanala  
-Email: lakshminarasimhaswamyvithanala@gmail.com  
-GitHub: [https://github.com/Vithanala](https://github.com/VithanalaLakshminarasimhaSwamy)
+Email: mk744159@gmail.com
+GitHub: [https://github.com/DanielBabu123](https://github.com/DanielBabu123)
 
 
 ## License
